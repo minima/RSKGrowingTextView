@@ -43,7 +43,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
 }
 
 /// A light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
-@IBDesignable open class RSKGrowingTextView: RSKPlaceholderTextView {
+open class RSKGrowingTextView: RSKPlaceholderTextView {
     
     // MARK: - Private Properties
     
@@ -79,19 +79,19 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Open Properties
     
     /// A Boolean value that determines whether the animation of the height change is enabled. Default value is `true`.
-    @IBInspectable open var animateHeightChange: Bool = true
+    open var animateHeightChange: Bool = true
     
     /// The receiver's delegate.
     open weak var growingTextViewDelegate: RSKGrowingTextViewDelegate? { didSet { delegate = growingTextViewDelegate } }
     
     /// The duration of the animation of the height change. The default value is `0.35`.
-    @IBInspectable open var heightChangeAnimationDuration: Double = 0.35
+    open var heightChangeAnimationDuration: Double = 0.35
     
     /// The block which contains user defined actions that will run during the height change.
     open var heightChangeUserActionsBlock: HeightChangeUserActionsBlockType?
     
     /// The maximum number of lines before enabling scrolling. The default value is `5`.
-    @IBInspectable open var maximumNumberOfLines: Int = 5 {
+    open var maximumNumberOfLines: Int = 5 {
         didSet {
             if maximumNumberOfLines < minimumNumberOfLines {
                 maximumNumberOfLines = minimumNumberOfLines
@@ -101,7 +101,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     /// The minimum number of lines. The default value is `1`.
-    @IBInspectable open var minimumNumberOfLines: Int = 1 {
+    open var minimumNumberOfLines: Int = 1 {
         didSet {
             if minimumNumberOfLines < 1 {
                 minimumNumberOfLines = 1
